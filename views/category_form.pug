@@ -1,0 +1,23 @@
+extends layout 
+
+block content
+    h2= title
+
+    form(method='POST', action='')
+        div(class='form-field')
+            label(for="title") Title:
+            input#title(type='text' placeholder='Category title' name='title' value=(undefined === category ? '' : category.title) required='true')
+
+        div(class='form-field')
+            label(for="description") Description: 
+            textarea#description(type='textarea' placeholder='Category description' name='description' required='true') #{undefined === category ? '' : category.description}
+
+        div(class='form-field')
+            label(for="password") Please enter the secret password to proceed.
+            input#password(type='password' name='password' required='true')
+        button.submit(type='submit') Submit
+
+    if errors 
+        ul 
+            for error in errors 
+                li(class='err')!= error.msg

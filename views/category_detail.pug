@@ -1,0 +1,21 @@
+extends layout 
+
+block content
+    h2 Category: #{category.title}
+    div(class='categoryInfo')
+        h3 #[strong Description:]
+        p #{category.description}
+        
+        if items
+            p #[strong Items in category]: 
+            ul 
+                for item in items 
+                    li(class='categoryItem')
+                        span 
+                            a(href=item.url) #{item.name}
+
+        div(class='links')
+            p
+                a(href=`${category.url}/update`) Update Category
+            p 
+                a(href=`${category.url}/delete`) Delete Category

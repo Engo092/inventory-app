@@ -1,0 +1,9 @@
+extends layout 
+
+block content
+    h2= title 
+    ul(class="items")
+        for item in all_items 
+            li(class="item")
+                a(href=item.url) #{item.name}
+                p - Price: $#{item.price}, Number in Stock: #{item.number_in_stock}

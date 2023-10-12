@@ -1,0 +1,18 @@
+extends layout 
+
+block content
+    h2 #{title}: #{item.name}
+
+    p(class='deleteP') Do you really want to delete this item?
+
+    form(method='POST', action='')
+        input#itemid(type='hidden' name='itemid' required='true' value=item._id)
+        div(class='form-field')
+            label(for="password") Please enter the secret password to proceed.
+            input#password(type='password' name='password' required='true')
+        button.submit(type='submit') Delete
+
+    if errors 
+        ul 
+            for error in errors 
+                li(class='err')!= error.msg

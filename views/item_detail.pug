@@ -1,0 +1,24 @@
+extends layout 
+
+block content
+    h2 #{item.name}
+    div(class='itemInfo')
+        h3 #[strong Description:]
+        p #{item.description}
+        
+        p #[strong Price:] $#{item.price}
+        p #[strong Number in Stock:] #{item.number_in_stock}
+
+        if item.category.length > 0
+            h3 #[strong Categories:]
+            ul(class='itemCategories')
+                for category in item.category 
+                    li 
+                        span
+                            a(href=category.url) #{category.title}
+
+        div(class='links')
+            p
+                a(href=`${item.url}/update`) Update Item
+            p 
+                a(href=`${item.url}/delete`) Delete Item

@@ -1,0 +1,173 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+  overflow-x: hidden;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  padding: 1px;
+  padding-left: 12px;
+  background-color: #1f2937;
+  font-size: 16px;
+  color: #fafafa;
+  box-shadow: 0px 5px 8px lightgray;
+}
+
+a {
+  color: #0369a1;
+}
+
+li {
+  list-style: none;
+}
+
+div.sideLinks {
+  position: fixed;
+  top: 80px;
+  height: 150px;
+  font-size: large;
+  padding: 0;
+  width: 10%;
+}
+
+div.sideLinks ul {
+  padding-left: 1vw;
+}
+
+div.sideLinks li {
+  padding-bottom: 10px;
+}
+
+div.content {
+  position: relative;
+  left: 50px;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 80%;
+  font-size: large;
+}
+
+span.linkLine {
+  z-index: -1;
+  position: fixed;
+  left: 12%;
+  top: 0;
+  display: inline-block;
+  height: 100vh;
+  background-color: lightgray;
+  width: 2px;
+  overflow-y: hidden;
+}
+
+.item, .category {
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+}
+
+.item a {
+  margin-right: 5px;
+}
+
+.category p {
+  margin-left: 10px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+label {
+  margin-bottom: 5px;
+  margin-right: 8px;
+}
+
+input, textarea {
+  appearance: none;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  font-size: medium;
+}
+
+input[type='text'], input[type='number'], input[type='password'] {
+  padding: 0.5rem 8px;
+}
+
+input[type='checkbox'] {
+  appearance: auto;
+  margin-right: 4px;
+}
+
+button.submit {
+  margin-top: 1rem;
+  appearance: none;
+  border: none;
+  border-radius: 10px;
+  background-color: #166534;
+  color: #fafafa;
+  font-size: larger;
+  padding: 10px;
+}
+
+button.submit:hover {
+  cursor: pointer;
+  background-color: #047857;
+}
+
+.itemCategories span, .categoryItem span {
+  position: relative;
+  left: -10px;
+}
+
+.itemCategories a, .categoryItem a {
+  color: #1e293b;
+}
+
+.itemCategories li {
+  margin-bottom: 0.5rem;
+}
+
+.links {
+  margin-top: 2rem;
+}
+
+.deleteP {
+  margin: 2rem 0;
+}
+
+.categoryItem {
+  margin-bottom: 1rem;
+}
+
+.err {
+  list-style: disc;
+}
+
+@media (max-width: 800px) {
+  span.linkLine {
+    left: 100px;
+  }
+
+  div.content {
+    width: 75%;
+  }
+}
+
+@media (max-width: 400px) {
+  header {
+    font-size: small;
+  }
+
+  div.content {
+      width: 65%;
+  }
+}

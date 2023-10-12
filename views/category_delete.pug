@@ -1,0 +1,26 @@
+extends layout 
+
+block content
+    h2 #{title}: #{category.title}
+
+    if items.length > 0
+        p(class='deleteP') #[strong You need to delete the following items before deleting this category:]
+        ul 
+            for item in items 
+                li(class='categoryItem')
+                    span 
+                        a(href=item.url) #{item.name}
+    else 
+        p(class='deleteP') Do you really want to delete this category?
+
+        form(method='POST', action='')
+            input#categoryid(type='hidden' name='categoryid' required='true' value=category._id)
+            div(class='form-field')
+                label(for="password") Please enter the secret password to proceed.
+                input#password(type='password' name='password' required='true')
+            button.submit(type='submit') Delete
+
+    if errors 
+        ul 
+            for error in errors 
+                li(class='err')!= error.msg

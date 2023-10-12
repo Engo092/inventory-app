@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header 
+      h1 Music Store Inventory
+    div(class="sideLinks")
+      ul 
+        li 
+          a(href="/") Home 
+        li 
+          a(href="/item") All Items 
+        li 
+          a(href="/category") All Categories
+        br
+        li 
+          a(href="/item/create") Create Item 
+        li 
+          a(href="/category/create") Create Category
+    div(class="content")
+      span(class="linkLine")
+      block content

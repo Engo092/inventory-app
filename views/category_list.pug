@@ -1,0 +1,9 @@
+extends layout 
+
+block content
+    h2= title 
+    ul(class="categories")
+        for category in all_categories 
+            li(class="category")
+                a(href=category.url) #{category.title}
+                p #[strong Description:] #{category.description}
