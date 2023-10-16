@@ -83,7 +83,7 @@ exports.category_update_post = [
         .trim()
         .isLength({ min: 1 })
         .escape(),
-    body("password", "incorrect password"),
+    body("password", "incorrect password").isIn(secretPassword),
 
     // Process request after validation and sanitization
     asyncHandler(async (req, res, next) => {
